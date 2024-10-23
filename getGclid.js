@@ -17,7 +17,16 @@ if (gclid) {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ gclid: gclid }),
-    }).catch((error) => {
+    })
+    .then(response => {
+        if(response.ok) {
+            console.log('gclid successfully sent to the backend.');
+        }
+        else {
+            console.error('Failed to send gclid to the backend.');
+        }
+    })
+    .catch((error) => {
         console.error("Error sending gclid:", error);
     });
 }
