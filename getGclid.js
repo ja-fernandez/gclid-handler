@@ -11,7 +11,7 @@ const gclid = getQueryParam("gclid");
 /* If 'gclid' is present in the URL, send it to the backend API endpoint */
 if (gclid) {
     const api_url = "https://brandon-gclid-ingest.fly.dev/capture_gclid";
-    console.log("TEST");
+
     /* Send gclid to backend API via POST request */
     fetch(api_url, {
         method: "POST",
